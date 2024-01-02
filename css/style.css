@@ -1,0 +1,1288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@media screen and (max-width: 768px) {
+    nav {
+        justify-content: space-between !important;
+    }
+
+    .logo {
+        padding: 3em;
+    }
+
+    .links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 135px;
+        left: 0;
+        width: 100%;
+        background-color: #232946;
+    }
+    .links a {
+        padding: 15px;
+        text-align: center;
+        border: 1px solid #ccc !important;
+        margin: 5px 0;
+    }
+    .burger-menu {
+        display: block !important;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+
+    .content {
+        gap: 2em !important;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    color: #fff;
+    background: linear-gradient(to bottom, #232946, #004643C9);
+}
+
+section {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+/* NAVBAR RULES ---------------------------------*/
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    position: sticky;
+    top: 0;
+    background-color: #232946;
+    padding: 10px;
+    min-width: 768px;
+    width: 100%;
+    height: 140px;
+    margin-bottom: 2em;
+    z-index: 1;
+}
+
+.logo-img {
+    top: 0;
+    width: 200px;
+    height: auto;
+}
+
+.links {
+    padding: 2em;
+    overflow: hidden;
+}
+
+.links a {
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    color: #fff;
+    font-size: 28px;
+    border-radius: 15px;
+}
+.links a:hover,
+.links a.active {
+    background: #27C8C2;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    margin-right: 70px;
+}
+.bar {
+    width: 60px;
+    height: 6px;
+    background-color: #fff;
+    margin: 12px 0;
+}
+
+/* MAIN RULES ---------------------------------*/
+main {
+    display: flex;
+    flex-direction: column;
+    min-width: 768px;
+    width: 100%;
+    align-items: center;
+    min-height: 100vh;
+}
+/* FOOTER RULES ---------------------------------*/
+footer {
+    position: relative;
+    bottom: 0;
+    background-color: #121629;
+    padding: 20px;
+    padding-bottom: 0;
+    min-width: 768px;
+    width: 100%;
+    height: 300px;
+    color: #fff;
+    z-index: 1;
+}
+
+.footer-content {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+footer h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.about {
+    margin-left: 20px;
+}
+
+.email {
+    margin-left: 20px;
+}
+
+.social-media-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.loc-container {
+    display: flex;
+    justify-content: right;
+    width: fit-content;
+    border-style: solid;
+    border-radius: 10px;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    margin-right: 3em;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: right;
+    padding: 5px;
+}
+
+.location i {
+    font-size: 12px;
+}
+
+.location-text {
+    font-size: 10px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* beranda RULES ---------------------------------*/
+/* welcome RULES ---------------------------------*/
+.welcome {
+    width: 100%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.rocket-person {
+    width: 100%;
+}
+
+/* troliin-friends RULES ---------------------------------*/
+.container {
+    display: grid;
+    background: linear-gradient(to bottom, #232946, #242A47FA, #243A53FA, #257481FC, #27C8C2);
+    width: 90%;
+    justify-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    padding: 50px;
+    border-radius: 25px;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.container .heading {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.container .heading h1 {
+    font-size: 48px;
+}
+
+.container .content {
+    display: flex;
+}
+
+.container .subcontent {
+    text-align: center;
+    padding: 20px;
+}
+
+.container .subcontent h3 {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.container .subcontent p {
+    font-size: 18px;
+}
+
+.container .subcontent img {
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* join RULES ---------------------------------*/
+.join-troliin {
+    position: relative;
+    min-width: 600px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5em;
+    margin-bottom: 4.5em;
+    z-index: 0;
+}
+
+.join-troliin .background {
+    position: absolute;
+    transform: translateY(25%);
+    width: 120%;
+    height: 85%;
+    background-color: #90CFC5;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    z-index: -1;
+}
+
+.icon {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.icon img {
+    max-width: 200px;
+    transform: scaleX(-1);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.join-text {
+    color: #fff;
+    font-size: 56px;
+}
+
+.text-1,
+.text-2 {
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+}
+
+.text-2 {
+    margin-left: 40px;
+}
+
+.join-button {
+    text-decoration: none;
+    text-align: center;
+    width: 50%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    font-weight: bold;
+}
+
+/* help RULES ---------------------------------*/
+.help {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: #ed9b21;
+    padding: 3em;
+    border-radius: 30px;
+}
+
+.help .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.help .text {
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+}
+
+.help-button {
+    max-width: 50%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    font-weight: bold;
+}
+
+.help .right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.question-mark-img {
+    min-width: 15em;
+    max-width: 20em;
+}
+
+/* news RULES ---------------------------------*/
+.news {
+    width: 100%;
+    background-color: #0C2732;
+    padding: 3em;
+    overflow: hidden;
+}
+
+.news-header {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.news-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 40px 40px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none !important;
+}
+
+
+.news i {
+    font-size: 48px;
+}
+
+.news-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-content {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.news-description {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.read-more-button {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+/* berita(selengkapnya) RULES ---------------------------------*/
+/* header RULES ---------------------------------*/
+.header-berita {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.header-berita img {
+    width: 100%;
+}
+
+/* berita isi RULES ---------------------------------*/
+.top {
+    text-align: center;
+    padding: 25px;
+}
+
+.top h1 {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    margin: 20px 0;
+}
+
+.top p {
+    margin: 20px 0;
+}
+
+.mid {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.mid .img {
+    max-height: 300px;
+    max-width: 500px;
+    margin: 15px;
+    overflow: hidden;
+}
+
+.mid img {
+    display: flex;
+}
+
+.mid .text {
+    max-width: 600px;
+    text-align: justify;
+}
+
+.mid h2 {
+    margin-bottom: 20px;
+}
+
+.bot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+.bot p {
+    margin-bottom: 50px;
+}
+
+.bot .horizontal-line {
+    width: 100%;
+    border-top: 1px solid #fff;
+}
+
+/* lainnya RULES ---------------------------------*/
+.berita-lainnya {
+    width: 100%;
+}
+
+.berita-lainnya h1 {
+    text-align: left;
+    padding: 15px;
+    font-size: 48px;
+    text-shadow: 2px 2px #000;
+}
+
+.berita-lainnya-con {
+    display: flex;
+    padding: 15px;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+/* perusahaan RULES ---------------------------------*/
+/* header-perusahaan RULES ---------------------------------*/
+.header-perusahaan {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-perusahaan .heading {
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 48px;
+    text-shadow: 2px 2px #000;
+}
+
+.header-perusahaan .img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.header-perusahaan .img img {
+    width: 600px;
+}
+
+/* history RULES ---------------------------------*/
+.history {
+    background-color: #ABD1C6;
+    width: 80%;
+    border-radius: 15px;
+}
+
+.history .heading {
+    font-size: 48px;
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.history .content {
+    width: 100%;
+}
+
+.history .left {
+    width: 60%;
+    margin-left: 20px;
+}
+
+.history .subcontent {
+    margin: 96px 0;
+}
+
+.history .content-img{
+    height: 280px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.history .content-img {
+    width: 100%;
+}
+
+.history .content-text {
+    text-align: center;
+    margin: 24px 0;
+}
+
+.history .right {
+    width: 40%;
+    text-align: center;
+}
+
+.history .right h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 48px 0;
+}
+
+.dot {
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border-radius: 14px;
+}
+
+.line {
+    width: 4px;
+    height: 300px;
+    background: #fff;
+}
+
+/* founder RULES ---------------------------------*/
+.founder-container {
+    display: grid;
+    background-color: #242A47;
+    width: 100%;
+    justify-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    padding: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.founder-container .heading {
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.founder-container .heading h1 {
+    font-size: 48px;
+}
+
+.founder-container .content {
+    background-color: #343B5C;
+    display: flex;
+    width: 90%;
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.founder-container .subcontent {
+    text-align: center;
+    padding: 20px;
+}
+
+.founder-container .subcontent h3 {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.founder-container .subcontent p {
+    font-size: 18px;
+}
+
+.founder-container .subcontent img {
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* gabung RULES ---------------------------------*/
+/* register RULES ---------------------------------*/
+.register {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.register-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+}
+
+.register-container .left-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register-container .heading {
+    text-align: left;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+}
+
+.form-container {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.phone-container {
+    display: flex;
+    align-items: center;
+}
+
+.phone-container .prefix {
+    padding: 7px;
+    margin-right: 1px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 15px 0 0 15px;
+    color: #000;
+}
+
+.phone-container input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 0 15px 15px 0;
+}
+
+.register-container .submit-btn {
+    background-color: #A1C5BD;
+}
+
+/* alasan RULES ---------------------------------*/
+.alasan {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.alasan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #91C5BB;
+}
+
+.alasan-container .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 2px 2px #000;
+}
+
+.alasan-container .heading h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+}
+
+.heading p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.alasan-container .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.alasan-container .content-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    margin: 0 10px;
+}
+
+.alasan-container .content-img {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+}
+
+.alasan-container .content-text {
+    margin-top: 10px;
+}
+
+/* mitra RULES ---------------------------------*/
+/* header-mitra RULES ---------------------------------*/
+.header-mitra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-mitra-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateY(-75%);
+}
+
+.header-mitra-con h1 {
+    font-size: 64px;
+    font-weight: bolder;
+    text-shadow: 2px 2px #000;
+}
+
+.header-mitra-con p {
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    text-align: center;
+}
+
+/* info1 RULES ---------------------------------*/
+.info1 {
+    position: relative;
+    min-width: 600px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5em;
+    margin-bottom: 4.5em;
+    z-index: 0;
+}
+
+.info1 .background {
+    position: absolute;
+    transform: translateY(30%);
+    width: 120%;
+    height: 65%;
+    background-color: #242A47;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    z-index: -1;
+}
+
+.info1-bg-img {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.info1-bg-img img {
+    max-width: 30em;
+}
+
+.text-info1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    left: 20em;
+}
+
+.join-text .text2,
+.join-text .text1,
+.join-text .text3 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 5px 0;
+    text-shadow: 2px 2px #000;
+}
+
+.join-text .text2 {
+    position: relative;
+    left: 150px;
+}
+
+.join-text .text3 {
+    position: relative;
+    left: 30px;
+}
+
+
+/* info2 RULES ---------------------------------*/
+.info2 {
+    width: 100%;
+}
+
+.info2-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.info2-container .left {
+    position: relative;
+}
+
+.info2-container .left img {
+    max-width: 30em;
+}
+
+.info2-container .right {
+    display: flex;
+    justify-content: center;
+}
+
+.info2-container .right {
+    display: flex;
+    position: relative;
+    max-width: 500px;
+}
+
+.info2-container .right .heading {
+    text-align: left;
+    margin-bottom: 3em;
+}
+
+.info2-container .right .heading .text1,
+.info2-container .right .heading .text2,
+.info2-container .right .heading .text3 {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    line-height: 0.8;
+}
+
+.info2-container .right .heading .text1 span{
+    font-size: 86px;
+}
+
+.info2-container .right p {
+    word-wrap: break-word;
+}
+
+.platform {
+    width: 100%;
+    height: 70px;
+    background-color: #B6C2E1;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-12em);
+}
+
+/* FAQ RULES ---------------------------------*/
+/* header-mitra RULES ---------------------------------*/
+.header-faq {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    padding-bottom: 0;
+    margin: 0 3em;
+}
+
+.header-faq .left {
+    text-align: center;
+    padding: 20px;
+}
+
+.header-faq .heading h1 {
+    margin: 0;
+    text-shadow: 2px 2px #000;
+}
+
+.search-bar {
+    margin-top: 10px; /* Adjust as needed */
+}
+
+.search-container {
+    display: flex;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    padding: 10px;
+    background-color: #007bff; /* Adjust button color as needed */
+    border: none;
+    cursor: pointer;
+}
+
+.header-faq .right {
+    width: 100%;
+}
+
+.header-faq .img img {
+    max-width: 760px;
+    height: auto;
+}
+
+/* common-q RULES ---------------------------------*/
+.common-q {
+    background-color: #fff;
+    padding: 50px;
+}
+
+.common-q .heading h1 {
+    margin-bottom: .5em;
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.left {
+    max-width: 30em;
+    height: 100%;
+}
+
+.question-box {
+    background-color: #f9f9f9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    height: 350px;
+}
+
+.question-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.question-box li {
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.question-box li:hover {
+    background-color: #ebebeb;
+}
+
+.question-box li p {
+    margin: 0;
+    color: #000;
+    user-select: none;
+}
+
+.question-box li i {
+    margin-left: 5px;
+    color: #000;
+}
+
+.right {
+    max-width: 20em;
+    height: 100%;
+}
+
+.answer-box {
+    background-color: #f9f9f9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+    height: 350px;
+}
+
+.answer-box h2 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.answer-box p {
+    margin-bottom: 50px;
+    word-wrap: break-word;
+    color: #000;
+}
+
+.answer-box a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    color: #91C5BB;
+}
+
+.answer-box a:hover {
+    text-decoration: underline;
+}
+
+/* kontak RULES ---------------------------------*/
+.kontak {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: #91C5BB;
+    padding: 3em;
+    overflow: visible;
+}
+
+.kontak .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.kontak .text {
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+}
+
+.kontak button {
+    max-width: 50%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .15);
+    font-weight: bold;
+}
+
+.kontak .right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.kontak img {
+    min-width: 15em;
+    max-width: 30em;
+    z-index: 3;
+}
+
+/* faq-selengkapnya RULES ---------------------------------*/
+.selengkapnya-header {
+    background-color: #232946;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selengkapnya-header h1 {
+    font-size: 48px;
+}
+
+.selengkapnya-header .search-bar {
+    width: 300px;
+}
+
+.selengkapnya-header i {
+    color: #fff;
+}
+
+.selengkapnya {
+    background-color: #fff;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.more-answer-box {
+    color: rgba(36, 42, 71, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 35px 100px;
+    border-radius: 15px;
+    height: fit-content;
+    width: 80%;
+    margin: 50px 0;
+}
+
+.more-answer-box h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.more-answer-box .horizontal-line {
+    width: 100%;
+    border-top: 1px solid #000;
+    margin: 20px 0;
+}
+
+.more-answer-box .abstract {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.more-answer-box .sub-heading {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.more-answer-box p {
+    text-align: justify;
+}
+
+.feedback-faq {
+    margin: 50px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+
+.feedback-faq .btns {
+    display: flex;
+    gap: 50px;
+}
+
+.feedback-faq button {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-radius: 25px;
+}
