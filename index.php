@@ -1,63 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/swiper-bundle.min.css">
-        <title>Troliin</title>
-    </head>
-    <body>
-        <?php include "includes/nav.php"?>
-        <main>
-            <!-- Section: Welcome -->
-            <section class="welcome">
-                <img class="rocket-person" src="images/rocket-person.png" alt="Rocket Person Image">
-            </section>
+<?php
 
-            <!-- Section: Troliin Friends -->
-            <section class="container">
-                <div class="heading">
-                    <h1>Sahabat Troliin</h1>
-                </div>
-                <div class="content">
-                    <div class="subcontent">
-                        <h3>Lorem</h3>
-                        <img src="images/sample.png" alt="Sample Image">
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <div class="subcontent">
-                        <h3>Lorem</h3>
-                        <img src="images/sample.png" alt="Sample Image">
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </div>
-            </section>
+    include('includes/config.php');
+    include('includes/database.php');
+    include('includes/functions.php');
 
-            <!-- Section: Join Troliin -->
-            <section class="join-troliin">
-                <div class="background"></div>
-                <div class="icon">
-                    <img src="images/saly.png" alt="Icon Image">
-                </div>
-                <div class="right">
-                    <div class="join-text">
-                        <div class="text-1">Gabung</div>
-                        <div class="text-2">Sekarang!!</div>
-                    </div>
-                    <button class="join-button" type="button">Gabung</button>
-                </div>
-            </section>
+    include('includes/header.php');
+    include('home.php');
+    include('includes/footer.php');
 
-            <?php include "includes/help.php"?>
-            <?php include "includes/news.php"?>
-
-        </main>
-
-        <?php include "includes/footer.php"?>
-
-        <script src="javascript/script.js"></script>
-        <script src="javascript/swiper-bundle.min.js"></script>
-        <script src="https://kit.fontawesome.com/4d0e1aab0d.js" crossorigin="anonymous"></script>
-    </body>
-</html>
+?>
