@@ -1,6 +1,6 @@
 <?php
 include "includes/header.php";
-include('includes/login-nav.php');
+include('includes/nav.php');
 ?>
 
 <main>

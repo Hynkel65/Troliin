@@ -1,8 +1,7 @@
 <?php
 include "includes/header.php";
-include('includes/login-nav.php');
+include('includes/nav.php');
 ?>
-
 
 <main>
     <section class="header-faq">
@@ -10,13 +9,14 @@ include('includes/login-nav.php');
             <div class="heading">
                 <h1>Punya Pertanyaan?</h1>
             </div>
-            <div class="search-bar">
-                <form action="">
-                    <div class="search-container">
-                        <input type="text" placeholder="Ketik disini..." name="q">
-                        <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2xl"></i></button>
-                    </div>
-                </form>
+            <div class="input-group">
+                <div class="form-outline" data-mdb-input-init>
+                    <input type="search" id="form1" class="form-control" />
+                    <label class="form-label" for="form1">Search</label>
+                </div>
+                <button type="button" class="btn btn-primary" data-mdb-ripple-init>
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
         </div>
         <div class="right">
@@ -66,6 +66,14 @@ include('includes/login-nav.php');
             </div>
         </div>
     </section>
-    <?php include "includes/kontak.php" ?>
+    <section class="kontak">
+        <div class="left">
+            <div class="text">Masih ga ketemu??</div>
+            <button type="button">Kontak Kami</button>
+        </div>
+        <div class="right">
+            <img src="images/sally7.png" alt="sally7">
+        </div>
+    </section>
 </main>
 <?php include "includes/footer.php" ?>

@@ -43,13 +43,13 @@ if (isset($_POST['email'])) {
         <div class="col-md-6">
             <form method="post">
                 <!-- Email input -->
-                <div data-mdb-input-init class="form-outline mb-4">
+                <div class="form-outline mb-4" data-mdb-input-init>
                     <input type="email" id="email" name="email" class="form-control" />
                     <label class="form-label" for="email">Email address</label>
                 </div>
 
                 <!-- Password input -->
-                <div data-mdb-input-init class="form-outline mb-4">
+                <div class="form-outline mb-4" data-mdb-input-init>
                     <input type="password" id="password" name="password" class="form-control" />
                     <label class="form-label" for="password">Password</label>
                 </div>

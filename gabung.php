@@ -1,5 +1,7 @@
-<?php include "includes/header.php" ?>
-
+<?php
+include "includes/header.php";
+include('includes/nav.php');
+?>
 <main>
     <!-- Section: register -->
     <section class="register">

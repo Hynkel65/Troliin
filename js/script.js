@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
         centerSlide: 'true',
         fade: 'true',
         gragCursor: 'true',
-        //autoplay: {
-        //    delay: 2500,
-        //    disableOnInteraction: false,
-        //  },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
