@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-mdb-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -11,3 +11,4 @@
 </head>
 
 <body>
+<?php include('includes/nav.php'); ?>

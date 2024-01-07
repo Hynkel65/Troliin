@@ -6,10 +6,9 @@ include('includes/functions.php');
 secure();
 
 include('includes/header.php');
-include('includes/login-nav.php');
 
 if (isset($_GET['delete'])){
-    if ($stm = $connect->prepare('DELETE FROM users where id = ?')){
+    if ($stm = $conn->prepare('DELETE FROM users where id = ?')){
         $stm->bind_param('i',  $_GET['delete']);
         $stm->execute();
         
@@ -35,7 +34,7 @@ if ($stm = $conn->prepare('SELECT * FROM users')) {
 
 
 ?>
-<div class="container mt-5">
+<div class="container mt-5" style="min-height: 405px;">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h1 class="display-1">Users management</h1>

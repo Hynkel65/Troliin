@@ -5,7 +5,6 @@ include('includes/database.php');
 include('includes/functions.php');
 
 include('includes/header.php');
-include('includes/login-nav.php');
 
 if(isset($_SESSION["id"])) {
     header('Location: dashboard.php');
@@ -38,7 +37,7 @@ if (isset($_POST['email'])) {
 }
 
 ?>
-<div class="container mt-5">
+<div class="container mt-5" style="min-height: 405px;">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form method="post">
@@ -61,5 +60,5 @@ if (isset($_POST['email'])) {
 </div>
 
 <?php
-//include('includes/footer.php');
+include('includes/footer.php');
 ?>

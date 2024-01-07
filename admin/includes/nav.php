@@ -1,10 +1,4 @@
 <nav>
-    <div class="logo" href="index.php">
-        <a href="index.php">
-            <img class ="logo-img" src="images/logo.png" alt="logo">
-        </a>
-    </div>
-
     <div class="links">
         <a data-active="index" href="index.php">Home</a>
         <a data-active="dashboard" href="dashboard.php">Dashboard</a>

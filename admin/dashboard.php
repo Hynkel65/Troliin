@@ -6,10 +6,9 @@ include('includes/functions.php');
 secure();
 
 include('includes/header.php');
-include('includes/login-nav.php');
 
 ?>
-<div class="container mt-5">
+<div class="container mt-5" style="min-height: 405px;">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h1 class="display-1">Dashboard</h1>
@@ -20,5 +19,5 @@ include('includes/login-nav.php');
 </div>
 
 <?php
-//include('includes/footer.php');
+include('includes/footer.php');
 ?>

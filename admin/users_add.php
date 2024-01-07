@@ -9,7 +9,7 @@ include('includes/header.php');
 
 if (isset($_POST['username'])){
 
-    if ($stm = $connect->prepare('INSERT INTO users (username,email, password, active) VALUES (?, ?, ?, ?)')){
+    if ($stm = $conn->prepare('INSERT INTO users (username, email, password, active) VALUES (?, ?, ?, ?)')){
         $hashed = SHA1($_POST['password']);
         $stm->bind_param('ssss', $_POST['username'], $_POST['email'], $hashed,  $_POST['active']);
         $stm->execute();
@@ -24,12 +24,11 @@ if (isset($_POST['username'])){
         echo 'Could not prepare statement!';
     }
 
-
 }
 
 
 ?>
-<div class="container mt-5">
+<div class="container mt-5" style="min-height: 405px;">
     <div class="row justify-content-center">
         <div class="col-md-6">
         <h1 class="display-1">Add user</h1>
