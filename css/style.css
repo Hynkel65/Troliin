@@ -91,7 +91,7 @@ nav {
     text-decoration: none;
     padding: 10px 20px;
     transition: background-color 0.3s, color 0.3s;
-    color: #fff;
+    color: #fff !important;
     font-size: 28px;
     border-radius: 15px;
 }
@@ -228,7 +228,7 @@ footer h2 {
 }
 
 /* troliin-friends RULES ---------------------------------*/
-.container {
+.troliin-friends {
     display: grid;
     background: linear-gradient(to bottom, #232946, #242A47FA, #243A53FA, #257481FC, #27C8C2);
     width: 90%;
@@ -240,34 +240,34 @@ footer h2 {
     margin-bottom: 1.5em;
 }
 
-.container .heading {
+.troliin-friends .heading {
     text-align: center;
     margin-bottom: 1.5em;
 }
 
-.container .heading h1 {
+.troliin-friends .heading h1 {
     font-size: 48px;
 }
 
-.container .content {
+.troliin-friends .content {
     display: flex;
 }
 
-.container .subcontent {
+.troliin-friends .subcontent {
     text-align: center;
     padding: 20px;
 }
 
-.container .subcontent h3 {
+.troliin-friends .subcontent h3 {
     text-transform: uppercase;
     font-size: 28px;
 }
 
-.container .subcontent p {
+.troliin-friends .subcontent p {
     font-size: 18px;
 }
 
-.container .subcontent img {
+.troliin-friends .subcontent img {
     padding: 10px 20px;
     width: 100%;
     border-radius: 50px;

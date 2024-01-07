@@ -1,6 +1,8 @@
-<?php include "includes/header.php" ?>
+<?php
+include "includes/header.php";
+include('includes/login-nav.php');
+?>
 
-<?php include "includes/nav.php" ?>
 <main>
 
     <!-- Section: Welcome -->
@@ -9,7 +11,7 @@
     </section>
 
     <!-- Section: Troliin Friends -->
-    <section class="container">
+    <section class="troliin-friends">
         <div class="heading">
             <h1>Sahabat Troliin</h1>
         </div>
@@ -44,6 +46,6 @@
 
     <?php include "includes/help.php" ?>
     <?php include "includes/news.php" ?>
-    <?php include "includes/footer.php" ?>
 
 </main>
+<?php include "includes/footer.php" ?>
