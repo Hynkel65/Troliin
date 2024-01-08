@@ -60,6 +60,7 @@ body {
   color: #fff;
   background: linear-gradient(to bottom, #232946, #004643c9);
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 section {
@@ -129,7 +130,6 @@ main {
   min-width: 768px;
   width: 100%;
   align-items: center;
-  min-height: 100vh;
 }
 /* FOOTER RULES ---------------------------------*/
 /* footer {

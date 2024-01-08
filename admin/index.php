@@ -37,7 +37,7 @@ if (isset($_POST['email'])) {
 }
 
 ?>
-<div class="container mt-5" style="min-height: 405px;">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form method="post">
