@@ -1,38 +1,70 @@
 <?php
 include "includes/header.php";
-include('includes/nav.php');
+include('includes/database.php');
+
+
+if (isset($_POST['name'])){
+
+    if ($stm = $conn->prepare('INSERT INTO mitra (name, email, phoneNumber, shopLocation) VALUES (?, ?, ?, ?)')){
+        $stm->bind_param('ssss', $_POST['name'], $_POST['email'], $_POST['phoneNumber'], $_POST['shopLocation']);
+        $stm->execute();
+        
+
+        header('Location: gabung.php');
+        $stm->close();
+        die();
+
+    } else {
+        echo 'Could not prepare statement!';
+    }
+
+}
+
 ?>
+
 <main>
     <!-- Section: register -->
     <section class="register">
         <div class="register-container">
             <div class="left-container">
-                <div class="heading">
-                    <h1>Gabung</h1>
-                    <h1>Bersama Kami</h1>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <h1 class="display-1">Gabung</h1>
+                        <h1 class="display-2">Bersama Kami</h1>
+                        <form method="post">
+                            <!-- Name input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="name" name="name" class="form-control" />
+                                <label class="form-label" for="name">Nama</label>
+                            </div>
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="email" name="email" class="form-control" />
+                                <label class="form-label" for="email">Email address</label>
+                            </div>
+
+                            <!-- Phone input -->
+                            <div class="form-outline mb-4">
+                                <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" />
+                                <label class="form-label" for="phoneNumber">Phone Number</label>
+                            </div>
+
+                            <!-- Location input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="location" name="location" class="form-control" />
+                                <label class="form-label" for="location">Location</label>
+                                <div class="form-helper">e.g, Jakarta</div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block">Gabung</button>
+                        </form>
+
+                    </div>
+                    <div class="right-container">
+                        <img src="images/sally3.png" alt="#">
+                    </div>
                 </div>
-                <div class="form-container">
-                    <form id="registrationForm">
-                        <input type="text" id="name" name="name" placeholder="Name" required>
-
-                        <input type="email" id="email" name="email" placeholder="Email" required>
-
-                        <div class="phone-container">
-                            <div class="prefix">+62</div>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]+"
-                                title="Please enter only numbers" placeholder="Phone Number" required>
-                        </div>
-
-                        <input type="text" id="location" name="location" placeholder="Shop Location" required>
-
-                        <input type="submit" value="Submit" class="submit-btn">
-                    </form>
-                </div>
-            </div>
-            <div class="right-container">
-                <img src="images/sally3.png" alt="#">
-            </div>
-        </div>
     </section>
 
     <!-- Section: alasan -->

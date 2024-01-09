@@ -1,9 +1,10 @@
 <?php
 include "includes/header.php";
-include('includes/nav.php');
-?>
 
+
+?>
 <main>
+
     <section class="header-mitra" style="background-image: url('images/sample2.png');">
         <div class="header-mitra-con">
             <h1>Troliin</h1>
@@ -25,6 +26,7 @@ include('includes/nav.php');
             <a href="gabung.php" class="join-button">Gabung</a>
         </div>
     </section>
+
     <section class="info2">
         <div class="info2-container">
             <div class="left">
@@ -43,6 +45,27 @@ include('includes/nav.php');
         </div>
         <div class="platform"></div>
     </section>
+
+    <section class="location">
+        <div class="heading">
+            <h1>Lorem Ipsum</h1>
+        </div>
+        <div class="content">
+            <div class="subContent" style="background-image: url('images/sample5.png');">
+                <div class="text-wrapper">
+                    <div class="news-title">Jakarta</div>
+                    <p class="news-description">Lorem ipsum dolor sit amet consectetur. Non ullamcorper</p>
+                </div>
+            </div>
+            <div class="subContent" style="background-image: url('images/sample5.png');">
+                <div class="text-wrapper">
+                    <div class="news-title">Bogor</div>
+                    <p class="news-description">Lorem ipsum dolor sit amet consectetur. Non ullamcorper</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <?php include "includes/news.php" ?>
 </main>
 <?php include "includes/footer.php" ?>

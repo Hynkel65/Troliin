@@ -9,8 +9,8 @@ include('includes/header.php');
 
 if (isset($_POST['title'])) {
 
-    if ($stm = $conn->prepare('UPDATE posts set  title = ?, content = ? , date = ?  WHERE id = ?')) {
-        $stm->bind_param('sssi', $_POST['title'], $_POST['content'], $_POST['date'], $_GET['id']);
+    if ($stm = $conn->prepare('UPDATE posts set  title = ?, description = ?, content = ? , date = ?  WHERE id = ?')) {
+        $stm->bind_param('ssssi', $_POST['title'], $_POST['description'], $_POST['content'], $_POST['date'], $_GET['id']);
         $stm->execute();
 
 
@@ -58,6 +58,13 @@ if (isset($_GET['id'])) {
                                 <input type="text" id="title" name="title" class="form-control"
                                     value="<?php echo $post['title'] ?>" />
                                 <label class="form-label" for="title">Title</label>
+                            </div>
+
+                            <!-- Description input -->
+                            <div class="form-outline mb-4">
+                                <input type="text" id="description" name="description" class="form-control"
+                                    value="<?php echo $post['description'] ?>" />
+                                <label class="form-label" for="description">Description</label>
                             </div>
 
                             <!-- Content input -->

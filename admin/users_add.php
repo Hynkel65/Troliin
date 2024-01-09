@@ -28,7 +28,7 @@ if (isset($_POST['username'])){
 
 
 ?>
-<div class="container mt-5" style="min-height: 405px;">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
         <h1 class="display-1">Add user</h1>

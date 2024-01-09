@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
         centerSlide: 'true',
         fade: 'true',
         gragCursor: 'true',
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-          },
+//        autoplay: {
+//            delay: 2500,
+//            disableOnInteraction: false,
+//          },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -32,19 +32,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 slidesPerView: 3,
             },
         }
-    });
-});
-
-/* burger SCRIPT ---------------------------------*/
-document.addEventListener('DOMContentLoaded', function () {
-    const burgerMenu = document.querySelector('.burger-menu');
-    const links = document.querySelector('.links');
-
-    burgerMenu.addEventListener('click', function () {
-        links.style.display = (getComputedStyle(links).display === 'flex') ? 'none' : 'flex';
-    });
-
-    window.addEventListener('resize', function () {
-        links.style.display = (window.innerWidth <= 767) ? 'none' : 'flex';
     });
 });
