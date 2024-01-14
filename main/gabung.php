@@ -1,23 +1,31 @@
 <?php
 include "includes/header.php";
 include('includes/database.php');
+include('includes/functions.php');
+include('includes/config.php');
 
+if (isset($_POST['name'])) {
 
-if (isset($_POST['name'])){
+    $name = validateInput('name');
+    $email = validateInput('email');
+    $phoneNumber = validateInput('phoneNumber');
+    $shopLocation = validateInput('shopLocation');
 
-    if ($stm = $conn->prepare('INSERT INTO mitra (name, email, phoneNumber, shopLocation) VALUES (?, ?, ?, ?)')){
-        $stm->bind_param('ssss', $_POST['name'], $_POST['email'], $_POST['phoneNumber'], $_POST['shopLocation']);
-        $stm->execute();
-        
+    if (!empty($name) && !empty($email) && !empty($phoneNumber) && !empty($shopLocation) && !empty($shopLocation)) {
 
-        header('Location: gabung.php');
-        $stm->close();
-        die();
+        if ($stm = $conn->prepare('INSERT INTO mitra (name, email, phoneNumber, shopLocation) VALUES (?, ?, ?, ?)')) {
+            $stm->bind_param('ssss', $_POST['name'], $_POST['email'], $_POST['phoneNumber'], $_POST['shopLocation']);
+            $stm->execute();
 
-    } else {
-        echo 'Could not prepare statement!';
+            set_message('Register success');
+            header('Location: gabung.php');
+            $stm->close();
+            die();
+
+        } else {
+            echo 'Could not prepare statement!';
+        }
     }
-
 }
 
 ?>
@@ -51,8 +59,8 @@ if (isset($_POST['name'])){
 
                             <!-- Location input -->
                             <div class="form-outline mb-4">
-                                <input type="text" id="location" name="location" class="form-control" />
-                                <label class="form-label" for="location">Location</label>
+                                <input type="text" id="shopLocation" name="shopLocation" class="form-control" />
+                                <label class="form-label" for="shopLocation">Location</label>
                                 <div class="form-helper">e.g, Jakarta</div>
                             </div>
 
@@ -95,3 +103,21 @@ if (isset($_POST['name'])){
     <?php include "includes/news.php" ?>
 </main>
 <?php include "includes/footer.php" ?>
+
+<script>
+    function showToast(message, position, type) {
+        const toast = document.getElementById("toast");
+        toast.className = toast.className + " show";
+
+        if (message) toast.innerText = message;
+
+        if (position !== "") toast.className = toast.className + ` ${position}`;
+        if (type !== "") toast.className = toast.className + ` ${type}`;
+
+        setTimeout(function () {
+            toast.className = toast.className.replace(" show", "");
+        }, 3000);
+    }
+</script>
+
+<?php get_message(); ?>

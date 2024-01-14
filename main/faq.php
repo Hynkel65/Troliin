@@ -1,7 +1,10 @@
 <?php
 include "includes/header.php";
+include "includes/database.php";
 
-
+// Fetch all questions to be used in the loop
+$queryAllQuestions = "SELECT * FROM faq";
+$resultAllQuestions = mysqli_query($conn, $queryAllQuestions);
 ?>
 
 <main>
@@ -12,12 +15,9 @@ include "includes/header.php";
             </div>
             <div class="input-group">
                 <div class="form-outline" data-mdb-input-init>
-                    <input type="search" id="form1" class="form-control" />
-                    <label class="form-label" for="form1">Search</label>
+                    <input type="search" id="searchInput" class="form-control" oninput="searchQuestions()" />
+                    <label class="form-label" for="searchInput">Search</label>
                 </div>
-                <button type="button" class="btn btn-primary" data-mdb-ripple-init>
-                    <i class="fas fa-search"></i>
-                </button>
             </div>
         </div>
         <div class="right">
@@ -34,35 +34,27 @@ include "includes/header.php";
             <div class="left">
                 <div class="question-box" id="questionBox">
                     <ul>
-                        <li onclick="showAnswer('answer1')">
-                            <p>Lorem ipsum dolor sit amet</p>
-                            <i class="fa-solid fa-chevron-right" style="color: #000000;"></i>
-                        </li>
-                        <li onclick="showAnswer('answer2')">
-                            <p>Lorem ipsum dolor sit amet 1</p>
-                            <i class="fa-solid fa-chevron-right" style="color: #000000;"></i>
-                        </li>
-                        <li onclick="showAnswer('answer3')">
-                            <p>Lorem ipsum dolor sit amet 2</p>
-                            <i class="fa-solid fa-chevron-right" style="color: #000000;"></i>
-                        </li>
-                        <li onclick="showAnswer('answer4')">
-                            <p>Lorem ipsum dolor sit amet 3</p>
-                            <i class="fa-solid fa-chevron-right" style="color: #000000;"></i>
-                        </li>
-                        <li onclick="showAnswer('answer5')">
-                            <p>Lorem ipsum dolor sit amet 4</p>
-                            <i class="fa-solid fa-chevron-right" style="color: #000000;"></i>
-                        </li>
+                        <?php
+                        // Loop through each row in the result set
+                        while ($row = mysqli_fetch_assoc($resultAllQuestions)) {
+                            // Output question for each row
+                            echo '<li onclick="showAnswer(' . $row['id'] . ')">';
+                            echo '<p>' . $row['question'] . '</p>';
+                            echo '<i class="fa-solid fa-chevron-right" style="color: #000000;"></i>';
+                            echo '</li>';
+                        }
+                        ?>
                     </ul>
+                    <div id="noResultMessage" style="display: none; color: #000;">
+                        <p>Sorry, the question you are looking for is not here. Feel free to contact us.</p>
+                    </div>
                 </div>
             </div>
             <div class="right">
                 <div class="answer-box" id="answerBox">
-                    <h2>Lorem ipsum dolor sit amet</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur. Non ullamcorper adipiscing condimentum nulla velit est.
-                        Dis posuere tempor fermentum ipsum ultrices eget. Ut vitae nulla neque </p>
-                    <a href="faq-selengkapnya.php">selengkapnya</a>
+                    <!-- Default content, will be updated by JavaScript -->
+                    <h2>Select a question to view the answer</h2>
+                    <p>Please click on a question to see its answer.</p>
                 </div>
             </div>
         </div>
@@ -70,11 +62,17 @@ include "includes/header.php";
     <section class="kontak">
         <div class="left">
             <div class="text">Masih ga ketemu??</div>
-            <button type="button">Kontak Kami</button>
+            <a href="mailto:info@mail.com">Kontak Kami</a>
         </div>
         <div class="right">
             <img src="images/sally7.png" alt="sally7">
         </div>
     </section>
 </main>
-<?php include "includes/footer.php" ?>
+
+<?php
+include "includes/footer.php";
+
+// Close the database connection
+mysqli_close($conn);
+?>

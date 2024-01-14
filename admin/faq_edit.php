@@ -9,11 +9,9 @@ include('includes/header.php');
 
 if (isset($_POST['question'])) {
 
-    if ($stm = $conn->prepare('UPDATE faq set  question = ?, answer = ? , category = ?, display_order = ?, status = ?  WHERE id = ?')) {
-        $stm->bind_param('sssssi', $_POST['question'], $_POST['answer'], $_POST['category'], $_POST['display_order'], $_POST['status'], $_GET['id']);
+    if ($stm = $conn->prepare('UPDATE faq set  question = ?, abstract = ?, answer = ? , category = ?, display_order = ?, status = ?  WHERE id = ?')) {
+        $stm->bind_param('ssssssi', $_POST['question'], $_POST['abstract'], $_POST['answer'], $_POST['category'], $_POST['display_order'], $_POST['status'], $_GET['id']);
         $stm->execute();
-
-
 
 
         $stm->close();
@@ -26,10 +24,6 @@ if (isset($_POST['question'])) {
     } else {
         echo 'Could not prepare post update statement statement!';
     }
-
-
-
-
 
 }
 
@@ -59,6 +53,12 @@ if (isset($_GET['id'])) {
                                 <label class="form-label" for="question">Question</label>
                             </div>
 
+                            <!-- Abstract input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="abstract">Abstract</label>
+                                <textarea name="abstract" id="abstract"> <?php echo $faq['abstract'] ?> </textarea>
+                            </div>
+
                             <!-- Answer input -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="answer">Answer</label>
@@ -74,17 +74,21 @@ if (isset($_GET['id'])) {
 
                             <!-- Category input -->
                             <div class="form-outline mb-4">
-                                <div class="form-outline mb-4">
-                                    <select name="category" class="form-select" id="category">
-                                        <option value="" disabled selected hidden>Select your category</option>
-                                        <option value="0">General Information</option>
-                                        <option value="1">Troubleshooting and Technical Issues</option>
-                                        <option value="2">Privacy and Security</option>
-                                        <option value="3">Contact and Supports</option>
-                                        <option value="4">Legal and Terms of Service</option>
-                                    </select>
-                                </div>
+                                <select name="category" class="form-select" id="category">
+                                    <option value="" disabled hidden>Select your category</option>
+                                    <option value="0" <?php echo ($faq['category'] == 0) ? 'selected' : ''; ?>>General Information
+                                    </option>
+                                    <option value="1" <?php echo ($faq['category'] == 1) ? 'selected' : ''; ?>>Troubleshooting and
+                                        Technical Issues</option>
+                                    <option value="2" <?php echo ($faq['category'] == 2) ? 'selected' : ''; ?>>Privacy and Security
+                                    </option>
+                                    <option value="3" <?php echo ($faq['category'] == 3) ? 'selected' : ''; ?>>Contact and Supports
+                                    </option>
+                                    <option value="4" <?php echo ($faq['category'] == 4) ? 'selected' : ''; ?>>Legal and Terms of
+                                        Service</option>
+                                </select>
                             </div>
+
 
                             <!-- Status input -->
                             <div class="form-outline mb-4">
@@ -105,7 +109,7 @@ if (isset($_GET['id'])) {
             <script src="js/tinymce/tinymce.min.js"></script>
             <script>
                 tinymce.init({
-                    selector: '#answer'
+                    selector: '#answer, #abstract'
                 })
             </script>
 

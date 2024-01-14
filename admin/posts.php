@@ -36,9 +36,6 @@ if (isset($_GET['delete'])) {
     }
 }
 
-
-
-
 // Fetch and display posts
 if ($stm = $conn->prepare('SELECT * FROM posts')) {
     $stm->execute();
@@ -46,7 +43,7 @@ if ($stm = $conn->prepare('SELECT * FROM posts')) {
 
     if ($result->num_rows > 0) {
         ?>
-        <div class="container mt-5" style="min-height: 405px;">
+        <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <h1 class="display-1">Posts management</h1>
@@ -56,7 +53,6 @@ if ($stm = $conn->prepare('SELECT * FROM posts')) {
                             <th>Id</th>
                             <th>Title</th>
                             <th>Description</th>
-                            <th>Content</th>
                             <th>Author's ID</th>
                             <th>Edit | Delete</th>
                         </tr>
@@ -71,9 +67,6 @@ if ($stm = $conn->prepare('SELECT * FROM posts')) {
                                 </td>
                                 <td>
                                     <?php echo $record['description']; ?>
-                                </td>
-                                <td>
-                                    <?php echo $record['content']; ?>
                                 </td>
                                 <td>
                                     <?php echo $record['author']; ?>

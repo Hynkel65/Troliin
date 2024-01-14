@@ -8,13 +8,13 @@ secure();
 include('includes/header.php');
 
 if (isset($_GET['delete'])){
-    if ($stm = $conn->prepare('DELETE FROM faq where id = ?')){
+    if ($stm = $conn->prepare('DELETE FROM mitra where id = ?')){
         $stm->bind_param('i',  $_GET['delete']);
         $stm->execute();
         
 
-        set_message("A faq " . $_GET['delete'] . " has beed deleted");
-        header('Location: faq.php');
+        set_message("A mitra " . $_GET['delete'] . " has beed deleted");
+        header('Location: mitra.php');
         $stm->close();
         die();
 
@@ -24,7 +24,7 @@ if (isset($_GET['delete'])){
 
 }
 
-if ($stm = $conn->prepare('SELECT * FROM faq')) {
+if ($stm = $conn->prepare('SELECT * FROM mitra')) {
     $stm->execute();
 
     $result = $stm->get_result();
@@ -37,31 +37,28 @@ if ($stm = $conn->prepare('SELECT * FROM faq')) {
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1 class="display-1">FAQ management</h1>
+            <h1 class="display-1">Mitra</h1>
             <table class="table table-striped table-hover">
                 <tr>
                     <th>Id</th>
-                    <th>Question</th>
-                    <th>Abstract</th>
-                    <th>Category</th>
-                    <th>Display Order</th>
-                    <th>Status</th>
-                    <th>Edit | Delete</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Shop Location</th>
+                    <th>Delete</th>
                 </tr>
                 <?php while ($record = mysqli_fetch_assoc($result)){ ?>
                     <tr>
                     <td><?php echo $record['id']; ?> </td>
-                    <td><?php echo $record['question']; ?> </td>
-                    <td><?php echo $record['abstract']; ?> </td>
-                    <td><?php echo $record['category']; ?> </td>
-                    <td><?php echo $record['display_order']; ?> </td>
-                    <td><?php echo $record['status']; ?> </td>
-                    <td><a href="faq_edit.php?id=<?php echo $record['id']; ?>">Edit</a>   |   
-                        <a href="faq.php?delete=<?php echo $record['id']; ?>">Delete</a></td>
+                    <td><?php echo $record['name']; ?> </td>
+                    <td><?php echo $record['email']; ?> </td>
+                    <td><?php echo $record['phoneNumber']; ?> </td>
+                    <td><?php echo $record['shopLocation']; ?> </td>
+                    <td>  
+                        <a href="users.php?delete=<?php echo $record['id']; ?>">Delete</a></td>
                     </tr>
                 <?php } ?>
             </table>
-            <a href="faq_add.php">Add new faq</a>
             
         </div>
     </div>
@@ -69,7 +66,7 @@ if ($stm = $conn->prepare('SELECT * FROM faq')) {
 
 <?php
     } else {
-        echo 'No posts found';
+        echo 'No mitra found';
     }
 
     $stm->close();

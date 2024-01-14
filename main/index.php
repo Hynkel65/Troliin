@@ -41,7 +41,7 @@ include "includes/header.php";
                 <div class="text-1">Gabung</div>
                 <div class="text-2">Sekarang!!</div>
             </div>
-            <button class="join-button" type="button">Gabung</button>
+            <a class="join-button" href="gabung.php">Gabung</a>
         </div>
     </section>
 

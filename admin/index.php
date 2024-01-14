@@ -29,6 +29,8 @@ if (isset($_POST['email'])) {
             set_message('You have succesfully logged in ' . $_SESSION['username']);
             header('Location: dashboard.php');
             die();
+        } else {
+            set_message('this email is not registered in users');
         }
         $stm->close();
     } else {

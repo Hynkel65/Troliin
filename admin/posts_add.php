@@ -9,40 +9,50 @@ include('includes/header.php');
 
 if (isset($_POST['title'])) {
     $targetDir = '../main/uploads/';
-    
 
-    if ($stm = $conn->prepare('INSERT INTO posts (title, description, content, author, date, image_url) VALUES (?, ?, ?, ?, ?, ?)')) {
+    $title = validateInput('title');
+    $description = validateInput('description');
+    $content = validateInput('content');
+    $date = validateInput('date');
 
-        if ($_FILES['image']['error'] == 0) {
+    if (!empty($title) && !empty($description) && !empty($content) && !empty($date)) {
+        if ($stm = $conn->prepare('INSERT INTO posts (title, description, content, author, date, image_url) VALUES (?, ?, ?, ?, ?, ?)')) {
 
-            $originalFilename = $_FILES['image']['name'];
-            $extension = pathinfo($originalFilename, PATHINFO_EXTENSION);
+            if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+                $originalFilename = $_FILES['image']['name'];
+                $extension = pathinfo($originalFilename, PATHINFO_EXTENSION);
 
-            $newFilename = time() . '_' . bin2hex(random_bytes(8)) . '.' . $extension;
-            $targetFile = $targetDir . $newFilename;
+                $newFilename = time() . '_' . bin2hex(random_bytes(8)) . '.' . $extension;
+                $targetFile = $targetDir . $newFilename;
 
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
-                $imagePath = $targetFile;
-
-                $stm->bind_param('ssssss', $_POST['title'], $_POST['description'], $_POST['content'], $_SESSION['id'], $_POST['date'], $imagePath);
-                $stm->execute();
-
-                set_message("A new post " . $_SESSION['username'] . " has been added");
-                header('Location: posts.php');
-                $stm->close();
-                die();
-
+                if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
+                    $imagePath = $targetFile;
+                } else {
+                    echo 'Could not move uploaded file!';
+                    // Handle the error accordingly
+                }
             } else {
-                echo 'Could not prepare statement!';
+                // If no file was uploaded, you can set a default image path or leave it empty based on your needs.
+                $imagePath = ''; // You can set a default value or leave it empty depending on your use case.
             }
+
+            $stm->bind_param('ssssss', $_POST['title'], $_POST['description'], $_POST['content'], $_SESSION['id'], $_POST['date'], $imagePath);
+            $stm->execute();
+
+            set_message("A new post " . $_SESSION['username'] . " has been added");
+            header('Location: posts.php');
+            $stm->close();
+            die();
+
+
+
         } else {
-            echo 'Error uploading file.';
+            echo 'Could not prepare statement!';
         }
-
-
-    } else {
-        echo 'Could not prepare statement!';
     }
+
+
+
 
 }
 

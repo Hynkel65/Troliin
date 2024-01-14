@@ -1,13 +1,5 @@
 <?php
 
-function secure() {
-    if(!isset($_SESSION["id"])) {
-        set_message("Please login first to view this page");
-        header('Location: /troliin/admin');
-        die();
-    }
-}
-
 function set_message($message) {
     {
         $_SESSION['message'] = $message;
