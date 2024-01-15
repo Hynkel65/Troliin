@@ -32,8 +32,9 @@ if ($stm = $conn->prepare('SELECT * FROM users')) {
 
     if ($result->num_rows > 0) {
 
-
 ?>
+
+
 <div class="container mt-5" style="min-height: 405px;">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -53,7 +54,7 @@ if ($stm = $conn->prepare('SELECT * FROM users')) {
                     <td><?php echo $record['email']; ?> </td>
                     <td><?php echo $record['active']; ?> </td>
                     <td><a href="users_edit.php?id=<?php echo $record['id']; ?>">Edit</a>   |   
-                        <a href="users.php?delete=<?php echo $record['id']; ?>">Delete</a></td>
+                        <a href="javascript:void(0);" onclick="confirmDelete(<?php echo $record['id']; ?>, 'user')">Delete</a></td>
                     </tr>
                 <?php } ?>
             </table>

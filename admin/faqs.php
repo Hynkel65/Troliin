@@ -8,87 +8,86 @@ secure();
 include('includes/header.php');
 
 if (isset($_GET['delete'])) {
-    $postId = $_GET['delete'];
-
-    $imageFileName = '';
-    if ($stm = $conn->prepare('SELECT image_url FROM posts WHERE id = ?')) {
-        $stm->bind_param('i', $postId);
-        $stm->execute();
-        $stm->bind_result($imageFileName);
-        $stm->fetch();
-        $stm->close();
-    }
-
-    if ($stm = $conn->prepare('DELETE FROM posts where id = ?')) {
-        $stm->bind_param('i', $postId);
+    if ($stm = $conn->prepare('DELETE FROM faq where id = ?')) {
+        $stm->bind_param('i', $_GET['delete']);
         $stm->execute();
 
-        if (!empty($imageFileName) && file_exists($imageFileName)) {
-            unlink($imageFileName);
-        }
 
-        set_message("A post " . $_GET['delete'] . " has been deleted");
-        header('Location: posts.php');
+        set_message("A faq " . $_GET['delete'] . " has beed deleted");
+        header('Location: faqs.php');
         $stm->close();
         die();
+
     } else {
         echo 'Could not prepare statement!';
     }
+
 }
 
-// Fetch and display posts
-if ($stm = $conn->prepare('SELECT * FROM posts')) {
+if ($stm = $conn->prepare('SELECT * FROM faq')) {
     $stm->execute();
+
     $result = $stm->get_result();
 
+
     if ($result->num_rows > 0) {
+
+
         ?>
         <div class="container mt-5">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <h1 class="display-1">Posts management</h1>
+                    <h1 class="display-1">FAQ management</h1>
                     <table class="table table-striped table-hover">
-                        <!-- Table headers -->
                         <tr>
                             <th>Id</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Author's ID</th>
+                            <th>Question</th>
+                            <th>Abstract</th>
+                            <th>Category</th>
+                            <th>Display Order</th>
+                            <th>Status</th>
                             <th>Edit | Delete</th>
                         </tr>
-                        <!-- Display posts -->
                         <?php while ($record = mysqli_fetch_assoc($result)) { ?>
                             <tr>
                                 <td>
                                     <?php echo $record['id']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $record['title']; ?>
+                                    <?php echo $record['question']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $record['description']; ?>
+                                    <?php echo $record['abstract']; ?>
                                 </td>
                                 <td>
-                                    <?php echo $record['author']; ?>
+                                    <?php echo $record['category']; ?>
                                 </td>
                                 <td>
-                                    <a href="posts_edit.php?id=<?php echo $record['id']; ?>">Edit</a> |
+                                    <?php echo $record['display_order']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $record['status']; ?>
+                                </td>
+                                <td><a href="faqs_edit.php?id=<?php echo $record['id']; ?>">Edit</a> |
                                     <a href="javascript:void(0);"
-                                        onclick="confirmDelete(<?php echo $record['id']; ?>, 'post')">Delete</a>
+                                        onclick="confirmDelete(<?php echo $record['id']; ?>, 'faq')">Delete</a>
                                 </td>
                             </tr>
                         <?php } ?>
                     </table>
-                    <a href="posts_add.php">Add new posts</a>
+                    <a href="faqs_add.php">Add new faq</a>
+
                 </div>
             </div>
         </div>
+
         <?php
     } else {
         echo 'No posts found';
     }
 
     $stm->close();
+
 } else {
     echo 'Could not prepare statement!';
 }

@@ -12,9 +12,8 @@ if (isset($_POST['username'])) {
     $username = validateInput('username');
     $email = validateInput('email');
     $password = validateInput('password');
-    $active = validateInput('active');
 
-    if (!empty($username) && !empty($email) && !empty($password)) {
+    if (!empty($password) && !empty($email) && !empty($username)) {
         if ($stm = $conn->prepare('INSERT INTO users (username, email, password, active) VALUES (?, ?, ?, ?)')) {
 
             $hashed = SHA1($_POST['password']);
@@ -30,7 +29,6 @@ if (isset($_POST['username'])) {
             echo 'Could not prepare statement!';
         }
     }
-
 }
 
 

@@ -13,30 +13,39 @@ if(isset($_SESSION["id"])) {
 
 
 if (isset($_POST['email'])) {
-    if ($stm = $conn->prepare('SELECT * FROM users WHERE email = ? AND password = ? AND active = 1')) {
-        $hashed = SHA1($_POST['password']);
-        $stm->bind_param('ss', $_POST['email'], $hashed);
+    if ($stm = $conn->prepare('SELECT * FROM users WHERE email = ? AND active = 1')) {
+        $stm->bind_param('s', $_POST['email']);
         $stm->execute();
 
         $result = $stm->get_result();
-        $user = $result-> fetch_assoc();
+        $user = $result->fetch_assoc();
 
         if ($user) {
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['username'] = $user['username'];
+            // Verify the password
+            $hashed = SHA1($_POST['password']);
+            if ($hashed === $user['password']) {
+                // Password is correct
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['username'] = $user['username'];
 
-            set_message('You have succesfully logged in ' . $_SESSION['username']);
-            header('Location: dashboard.php');
-            die();
+                set_message('You have successfully logged in as ' . $_SESSION['username']);
+                header('Location: dashboard.php');
+                die();
+            } else {
+                // Password is incorrect
+                set_message('Incorrect password for the provided email');
+            }
         } else {
-            set_message('this email is not registered in users');
+            // Email is not registered
+            set_message('This email is not registered in users');
         }
         $stm->close();
     } else {
-        echo'Could not prepare statement!';
+        echo 'Could not prepare statement!';
     }
 }
+
 
 ?>
 <div class="container mt-5">

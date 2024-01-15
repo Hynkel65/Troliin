@@ -25,7 +25,6 @@ function validateInput($field) {
     if (isset($_POST[$field]) && !empty($_POST[$field])) {
         return $_POST[$field];
     } else {
-        //echo ucfirst($field) . ' is required.';
         set_message($field . " is required.");
         return false;
     }

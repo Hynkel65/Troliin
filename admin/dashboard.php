@@ -14,8 +14,8 @@ include('includes/header.php');
             <h1 class="display-1">Dashboard</h1>
             <a href="users.php">Users management</a> |
             <a href="posts.php">Posts management</a>  |
-            <a href="faq.php">FAQ management</a>  |
-            <a href="mitra.php">Mitra</a>
+            <a href="faqs.php">FAQ management</a>  |
+            <a href="mitras.php">Mitra</a>
 
         </div>
     </div>
