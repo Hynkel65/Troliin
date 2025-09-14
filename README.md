@@ -1,26 +1,76 @@
-# Troliin-Web
+# 📝 Troliin Website
+Project: "Proyek Pembuatan Landing page Troliin berbasis website" 💻 
 
+An e-commerce platform for shopping carts and inventory management. This was a school assignment.
+
+# 🌐 Project Overview
 Troliin is an e-commerce platform designed to simplify online shopping. It features a streamlined inventory management system, a secure shopping cart, and a user-friendly interface. The project was a deep dive into building a full-stack application, including database design, user authentication, and managing state across multiple components. this peoject uses php language and bootstrap 5.
 
-----------------
+Project Status: The project is fully completed.
 
-Technologies Used
-framework: bootstrap 5
+Why this project? This project was completed as part of a school assignment, which required us to secure a client and develop a website for them. The assignment's curriculum included all legal and procedural steps, such as drafting a proposal, maintaining a project journal, and executing a formal contract.
 
-Programming Language: PHP
+# 💻 Technologies Used
+Markup Language: HTML5 (for semantic structure)
 
-Other Tools: Visual Studio Code, Git
+Styling: CSS3 (for responsive design and animations)
 
-------------
+Scripting: PHP (for interactivity)
 
-Screenshots
+Framework: bootstrap 5
 
-![Menu Beranda](screenshot/beranda.png)
-![Menu Perusahaan](screenshot/perusahaan.png)
-![Menu Gabung](screenshot/gabung.png)
-![Menu Mitra](screenshot/mitra.png)
-![Menu FAQ](screenshot/faq.png)
-![Menu CMS4](screenshot/cms4.png)
-![Menu CMS1](screenshot/cms1.png)
-![Menu CMS2](screenshot/cms2.png)
-![Menu CMS3](screenshot/cms3.png)
+Version Control: Git & GitHub (for project management and collaboration)
+
+Tools: Microsoft Word (for paperwork), VS Code, Figma (for initial design mockups), and a browser's developer tools.
+
+# 🧑‍💻 Meet the Team
+Andre Putra Samudera - Project Manager
+
+Satria Nugraha P - Analyst
+
+Fadillah Adam Yasir - Technical Writing
+
+Claren clarichie - Design UI/UX
+
+Zahran Rafi A (me) - Programmer
+
+# 📸 Screenshots
+<div align="center">
+  <img src="screenshot/beranda.png" alt="Menu Beranda">
+</div>
+
+---
+
+<div align="center">
+  <img src="screenshot/perusahaan.png" alt="Menu Perusahaan">
+</div>
+
+---
+
+<div align="center">
+  <img src="screenshot/gabung.png" alt="Menu Gabung">
+</div>
+
+---
+
+<div align="center">
+  <img src="screenshot/mitra.png" alt="Menu Mitra">
+</div>
+
+---
+
+<div align="center">
+  <img src="screenshot/faq.png" alt="Menu FAQ">
+</div>
+
+---
+
+<div align="center">
+  <img src="screenshot/cms4.png" alt="Menu CMS4">
+</div>
+
+---
+
+<div align="center">
+  <img src="screenshot/cms1.png" alt="Menu CMS1">
+</div>
