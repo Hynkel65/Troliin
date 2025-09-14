@@ -54,12 +54,6 @@ Zahran Rafi A (me) - Programmer
 ---
 
 <div align="center">
-  <img src="screenshot/mitra.png" alt="Menu Mitra">
-</div>
-
----
-
-<div align="center">
   <img src="screenshot/faq.png" alt="Menu FAQ">
 </div>
 
